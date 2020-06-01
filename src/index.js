@@ -1,17 +1,55 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Menu from './coms/menu/menu'
+import HomePage from './pages/home/index'
+import SpiderPage from './pages/spider/index'
+import WashPage from './pages/wash/index'
+import AnalyzePage from './pages/analyze/index'
+import ResultPage from './pages/result/index'
+import MonitorPage from './pages/monitor/index'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+const App = () => {
+  return (
+    <Router>
+      <div className="app">
+        <Menu />
+        <div className="page">
+          <Switch>
+            <Route exact path="/home">
+              <HomePage />
+            </Route>
+            <Route path="/spider">
+              <SpiderPage />
+            </Route>
+            <Route path="/wash">
+              <WashPage />
+            </Route>
+            <Route path="/analyze">
+              <AnalyzePage />
+            </Route>
+            <Route path="/result">
+              <ResultPage />
+            </Route>
+            <Route path="/monitor">
+              <MonitorPage />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
+  );
+}
+
+
+ReactDOM.render((
+  <App />
+), document.getElementById("root"))
+
