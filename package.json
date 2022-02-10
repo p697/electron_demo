@@ -10,7 +10,7 @@
     "antd": "^4.1.4",
     "bizcharts": "^3.5.8",
     "electron": "^8.2.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
